@@ -140,7 +140,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="flex flex-wrap gap-4"
             >
-              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+              <button onClick={() => window.open("https://github.com/shakil-ahmmed-se")} className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer">
                 View My Work <ArrowRight size={18} />
               </button>
 
@@ -172,16 +172,16 @@ const HeroSection = () => {
             variants={itemVariants}
             className="lg:w-1/2 flex justify-center mt-10 lg:mt-0 order-1 md:order-2"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 blur-xl opacity-30 animate-pulse" />
+            <div className="relative w-72 h-72  md:w-11/12 md:h-11/12">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-400 blur-xl opacity-30 animate-pulse" />
 
               <div className="relative rounded-full overflow-hidden border-4 border-gray-800/50 backdrop-blur-md">
                 <Image
                   src="/images/project.png"
                   alt="Profile"
-                  width={600}
-                  height={600}
-                  className="w-full h-full "
+                  width={1000}
+                  height={1000}
+                  className="w-full h-11/12 object-cover rounded-full"
                   priority
                 />
               </div>
