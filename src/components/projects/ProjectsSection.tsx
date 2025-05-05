@@ -25,8 +25,8 @@ const ProjectsSection = () => {
         "title": "Phibook",
         "description": "A social media site where users can post photos and statuses, with login/registration (including email verification), liking, commenting, and customization options for authenticated users' posts and profiles.",
         "tags": ["JavScript", "Python", "Django", "MySQL"],
-        "github": "#",
-        "live": "#",
+        "github": "https://github.com/shakil-ahmmed-se/phibook",
+        "live": "https://phibook-4g8j.onrender.com/accounts/register/",
         "image": "/images/phibook.png"
       },
     {
