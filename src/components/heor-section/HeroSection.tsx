@@ -7,11 +7,11 @@ import {
   Twitter,
   Download,
   Facebook,
-
 } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -40,8 +40,14 @@ const HeroSection = () => {
 
   const socialLinks = [
     { icon: <Github size={20} />, url: "https://github.com/shakil-ahmmed-se" },
-    { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/shakil-ahmmed-se/" },
-    { icon: <Facebook size={20} />, url: "https://www.facebook.com/shakil.ahmmedbd.3" },
+    {
+      icon: <Linkedin size={20} />,
+      url: "https://www.linkedin.com/in/shakil-ahmmed-se/",
+    },
+    {
+      icon: <Facebook size={20} />,
+      url: "https://www.facebook.com/shakil.ahmmedbd.3",
+    },
   ];
 
   return (
@@ -123,7 +129,20 @@ const HeroSection = () => {
               </span>
               <br />
               <span className="text-transparent text-xl md:text-4xl bg-clip-text bg-gradient-to-r from-purple-300 to-pink-400">
-                Full Stack Developer
+                <Typewriter
+                  words={[
+                    "Full Stack Developer",
+                    "Backend Developer",
+                    "Software Developer",
+                    "Dreamer",
+                  ]}
+                  loop={0} // 0 = infinite loop
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={80}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
+                />
               </span>
             </motion.h1>
 
@@ -140,16 +159,22 @@ const HeroSection = () => {
               variants={itemVariants}
               className="flex flex-wrap gap-4"
             >
-              <button onClick={() => window.open("https://github.com/shakil-ahmmed-se")} className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer">
+              <button
+                onClick={() =>
+                  window.open("https://github.com/shakil-ahmmed-se")
+                }
+                className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer"
+              >
                 View My Work <ArrowRight size={18} />
               </button>
 
-              <Link target="_blank" href={`https://drive.google.com/file/d/1b-iFyjheqQU4qMHyP7UX_rZ392nWMsJB/view?usp=sharing`}>
-              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-800/80 text-white font-medium hover:bg-gray-700/80 backdrop-blur-md transition-all cursor-pointer">
-            
+              <Link
+                target="_blank"
+                href={`https://drive.google.com/file/d/1b-iFyjheqQU4qMHyP7UX_rZ392nWMsJB/view?usp=sharing`}
+              >
+                <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-800/80 text-white font-medium hover:bg-gray-700/80 backdrop-blur-md transition-all cursor-pointer">
                   Download CV <Download size={18} />
-               
-              </button>
+                </button>
               </Link>
             </motion.div>
 

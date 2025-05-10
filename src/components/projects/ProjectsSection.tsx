@@ -2,9 +2,12 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { useState } from 'react';
 
 const ProjectsSection = () => {
-  const projects = [
+  const [showAll, setShowAll] = useState(false);
+  
+  const allProjects = [
     {
       title: "E-Commerce Platform",
       description: "A full-featured online store with cart functionality, user authentication, and payment processing.",
@@ -37,7 +40,31 @@ const ProjectsSection = () => {
       live: "https://web.cardlinx.app/",
       image: "/images/cardlinx-web.png"
     },
+    {
+      title: "Portfolio Website",
+      description: "A personal portfolio website to showcase my projects and skills.",
+      tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/shakil-ahmmed-se/Protfolio",
+      live: "https://shakil-ahmmed-se.vercel.app/",
+      image: "/images/portfolio.png"
+    },
+    {
+      title: "E-Commerce Admin Dashboard",
+      description: "An admin dashboard for managing an e-commerce platform, including product management, order tracking, and user management.",
+      tags: ["React", "Redux", "Tailwind CSS"],
+      github: "#",
+      live: "#",
+      image: "/images/ecommerce-admin.png"
+    }
+    
   ];
+
+  // Show only 4 projects initially, or all if showAll is true
+  const displayedProjects = showAll ? allProjects : allProjects.slice(0, 4);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-900">
@@ -61,7 +88,7 @@ const ProjectsSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -127,12 +154,12 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <a
-            href="#"
+          <button
+            onClick={toggleShowAll}
             className="inline-block px-8 py-3 rounded-full bg-gray-800 hover:bg-gray-700 text-white font-medium transition-all"
           >
-            View All Projects
-          </a>
+            {showAll ? 'Show Less' : 'View All Projects'}
+          </button>
         </motion.div>
       </div>
     </section>
